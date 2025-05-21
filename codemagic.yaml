@@ -1,0 +1,19 @@
+
+workflows:
+  android-build:
+    name: Android Build
+    environment:
+      flutter: stable
+      java: 17
+      vars:
+        JAVA_TOOL_OPTIONS: "-Xmx5g"
+    scripts:
+      - name: Flutter clean & pub get
+        script: |
+          flutter clean
+          flutter pub get
+      - name: Build APK
+        script: |
+          flutter build apk --debug
+    artifacts:
+      - build/app/outputs/flutter-apk/app-debug.apk

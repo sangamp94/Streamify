@@ -1,0 +1,2 @@
+# Dummy Podfile
+platform :ios, '11.0'
